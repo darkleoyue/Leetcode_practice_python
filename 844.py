@@ -24,3 +24,34 @@ class Solution:
                 stack2.pop()
                 stack2.reverse()
         return stack1 == stack2
+
+    
+    class Solution:
+    
+    def putInQueue(self, queue, string):
+
+        for i in string:
+            if i == "#":
+                if queue:
+                    queue.pop()
+                else:
+                    continue
+            else:
+                queue.append(i)
+
+        return queue
+    
+    def backspaceCompare(self, S: str, T: str) -> bool:
+        
+        queue0 = deque()
+        queue1 = deque()
+
+        queue0 = self.putInQueue(queue0, S)
+        queue1 = self.putInQueue(queue1, T)
+
+        if queue0 == queue1:
+            return True
+        else:
+            return False
+
+        
